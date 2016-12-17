@@ -21,9 +21,10 @@ const styles = {
   }
 }
 
-function mapStateToProps ({questions}) {
+function mapStateToProps ({questionnaire}) {
+
   return {
-    question: questions
+    question: questionnaire.questions[questionnaire.currentQuestion]
   }
 }
 export default connect(

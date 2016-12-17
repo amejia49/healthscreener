@@ -4,10 +4,8 @@ import { Link } from 'react-router'
 
 export default function Answer (props) {
   return (
-      <Link to = "/questions">
-        <button type='button' className='btn btn-lg btn-success'>
-          Get Started
+        <button type='button' onClick ={() => props.onAnswerSelect(props.value, props.currentQuestion)} className='btn btn-lg btn-success'>
+          {props.text}
         </button>
-      </Link>
   )
 }

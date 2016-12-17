@@ -1,7 +1,7 @@
 import React from 'react'
 import { Router, Route, hashHistory, IndexRoute } from 'react-router'
 import {
-  AppContainer, HomeContainer,
+  AppContainer, HomeContainer, QuestionContainer
 } from '~/containers'
 
 export default function getRoutes () {
@@ -10,6 +10,7 @@ export default function getRoutes () {
   return (
     <Router history={hashHistory}>
       <Route path='/' component={AppContainer}>
+      <Route path='questions' header='Player One' component={QuestionContainer} />
         <IndexRoute component={HomeContainer}/>
       </Route>
     </Router>

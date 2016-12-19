@@ -6,8 +6,8 @@ import { Provider } from 'react-redux'
 import * as reducers from '~/redux/modules'
 
 // const sagaMiddleware = createSagaMiddleware()
-const store = createStore(combineReducers(reducers), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
-
+const preloadedState = window.__PRELOADED_STATE__
+const store = createStore(combineReducers(reducers), preloadedState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 ReactDOM.render(
   <Provider store={store}>

@@ -1,6 +1,6 @@
 const ADD_QUESTIONS = 'ADD_QUESTIONS'
 const SET_ANSWER = 'SET_ANSWER'
-
+const CALCULATE_SCORE = 'CALCULATE_SCORE'
 
 const questionText = [
   'Little interest or pleasure in doing things?',
@@ -55,17 +55,37 @@ export function setAnswer (answer, currentQuestion) {
     type: SET_ANSWER
   }
 }
+export function calculateScore () {
+  return {
+    type: CALCULATE_SCORE
+  }
+}
 
-function setQuestionAnswer (state, action) {
+function userAnswer (state, action) {
   switch (action.type) {
     case SET_ANSWER :
       return {
         ...state,
         [action.currentQuestion]: {
           ...state[action.currentQuestion],
-          answer: action.answer
+          userAnswer: action.answer
         }
       }
+    default :
+      return {
+        ...state
+      }
+  }
+}
+
+function score (questions, action) {
+  switch (action.type) {
+    case CALCULATE_SCORE :
+      let total = 0;
+      Object.keys(questions).forEach((questionNumber) => {
+        total = total + questions[questionNumber].userAnswer
+      })
+      return total
     default :
       return {
         ...state
@@ -78,8 +98,13 @@ export function questionnaire (state=initialState, action) {
     case SET_ANSWER :
       return {
         ...state,
-        questions: setQuestionAnswer(state.questions, action),
+        questions: userAnswer(state.questions, action),
         currentQuestion: state.currentQuestion + 1
+      }
+    case CALCULATE_SCORE :
+      return {
+        ...state,
+        score: score(state.questions, action)
       }
     default :
       return state

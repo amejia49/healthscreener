@@ -1,3 +1,6 @@
 export Home from './Home/Home'
 export Question from './Question/Question'
 export Answer from './Answers/Answer'
+export Result from './Result/Result'
+export Therapist from './Therapist/Therapist'
+export RequestInfo from './RequestInfo/RequestInfo'

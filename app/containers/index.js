@@ -1,0 +1,6 @@
+export AppContainer from './App/AppContainer'
+export HomeContainer from './Home/HomeContainer'
+export QuestionContainer from './Question/QuestionContainer'
+export AnswersContainer from './Answers/AnswersContainer'
+export ResultContainer from './Result/ResultContainer'
+export TherapistContainer from './Therapist/TherapistContainer'

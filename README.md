@@ -10,3 +10,8 @@ PHQ-9 Depression Screener
 Flexbox layout to ensure web app is usable on mobile
 
 https://infinite-depths-27834.herokuapp.com/#/
+
+If you would like to test locally:
+1. npm install
+2. npm run dev
+-> runs on localhost:8080

@@ -8,6 +8,7 @@
     "start": "webpack-dev-server --inline",
     "webpack-watch": "webpack -w",
     "express-server": "node ./server",
+    "postinstall": "webpack --config ./webpack.config.js --progress",
     "dev": "concurrently --kill-others \"npm run webpack-watch\" \"npm run express-server\""
   },
   "author": "",

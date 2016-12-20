@@ -14,4 +14,5 @@ https://infinite-depths-27834.herokuapp.com/#/
 If you would like to test locally:
 1. npm install
 2. npm run dev
--> runs on localhost:8080
+
+runs on localhost:8080

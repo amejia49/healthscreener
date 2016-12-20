@@ -18,8 +18,12 @@ function score (score) {
     return 'Severe'
   }
 }
+
+Result.propTypes = {
+  score: PropTypes.number.isRequired,
+}
+
 export default function Result (props) {
-  console.log('props in question', props);
   return (
     <div className ="jumbotron col-sm-12 text-center" style={styles.transparentBg}>
       <p className ="lead"> Your Results: {props.score} {score(props.score)} Depression</p>

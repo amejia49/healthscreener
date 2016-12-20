@@ -1,6 +1,11 @@
 import React, { PropTypes, Component } from 'react'
 import { Link } from 'react-router'
 
+Therapist.propTypes = {
+  image: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  phoneNumber: PropTypes.string
+}
 export default function Therapist (props) {
   return (
     <div style={styles.card}>

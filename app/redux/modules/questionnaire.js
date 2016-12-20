@@ -1,6 +1,7 @@
-const ADD_QUESTIONS = 'ADD_QUESTIONS'
+const CLEAR_ANSWERS = 'CLEAR_ANSWERS'
 const SET_ANSWER = 'SET_ANSWER'
 const CALCULATE_SCORE = 'CALCULATE_SCORE'
+const PREVIOUS_QUESTION = 'PREVIOUS_QUESTION'
 
 const questionText = [
   'Little interest or pleasure in doing things?',
@@ -93,13 +94,35 @@ function score (questions, action) {
   }
 }
 
+export function clearAnswers () {
+  return {
+    type: CLEAR_ANSWERS
+  }
+}
+
+export function previousQuestion () {
+  return {
+    type: PREVIOUS_QUESTION
+  }
+}
+
 export function questionnaire (state=initialState, action) {
   switch (action.type) {
+    case CLEAR_ANSWERS :
+      return {
+        ...state,
+        currentQuestion:0
+      }
     case SET_ANSWER :
       return {
         ...state,
         questions: userAnswer(state.questions, action),
         currentQuestion: state.currentQuestion + 1
+      }
+    case PREVIOUS_QUESTION :
+      return {
+        ...state,
+        currentQuestion: state.currentQuestion - 1
       }
     case CALCULATE_SCORE :
       return {

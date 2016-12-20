@@ -19,7 +19,8 @@ const styles = {
   container: {
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
+    flexWrap: 'wrap'
   }
 }
 

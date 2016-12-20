@@ -6,8 +6,6 @@ import {
 } from '~/containers'
 
 export default function getRoutes () {
-
-  console.log('AppContainer', AppContainer)
   return (
     <Router history={hashHistory}>
       <Route path='/' component={AppContainer}>

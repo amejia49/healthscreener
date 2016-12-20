@@ -3,16 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "engines": {
-   "node": "5.10.1"
- },
+    "node": "5.10.1"
+  },
   "main": "index.js",
   "scripts": {
-    "production": "webpack -p",
-    "start": "webpack-dev-server --inline",
-    "webpack-watch": "webpack -w",
-    "express-server": "node ./server",
-    "postinstall": "concurrently --kill-others \"npm run webpack-watch\" \"npm run express-server\"",
-    "dev": "concurrently --kill-others \"npm run webpack-watch\" \"npm run express-server\""
+    "start": "react-scripts start",
+    "postinstall": "webpack --config ./webpack.config.js --progress",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
   "author": "",
   "license": "ISC",
@@ -28,6 +27,7 @@
     "html-webpack-plugin": "^2.24.1",
     "http-server": "^0.9.0",
     "node-sass": "^4.1.0",
+    "react-scripts": "^0.8.4",
     "redux-devtools-extension": "^1.0.0",
     "sass-loader": "^4.1.0",
     "webpack": "^1.14.0",

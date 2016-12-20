@@ -1,7 +1,7 @@
 # healthscreener
 PHQ-9 Depression Screener 
 
-React View
+*React View
 Redux handles state
 Separate presentational and container components
 Used Webpack and Babel 6 to transpile and bundle ES2015/JSX code

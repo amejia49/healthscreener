@@ -5,10 +5,8 @@
   "main": "index.js",
   "scripts": {
     "production": "webpack -p",
-    "start": "webpack-dev-server --inline",
-    "webpack-watch": "webpack -w",
-    "express-server": "node ./server",
-    "postinstall": "concurrently --kill-others \"npm run webpack-watch\" \"npm run express-server\""
+    "postinstall": "webpack --config ./webpack.config.js --progress --colors",
+    "start": "node ./server.js"
   },
   "author": "",
   "license": "ISC",
